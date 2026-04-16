@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>McDonald Insulation Services — Commercial Insulation Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Red+Hat+Display:wght@400;500;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0c0a;
+  --navy:#0f0f0b;
+  --deep:#131308;
+  --panel:#1a1a0f;
+  --surface:#222215;
+  --steel:#8a9e72;
+  --rule:rgba(138,158,114,.18);
+  --line:rgba(255,255,255,.05);
+  --ice:#e8e2d0;
+  --ice-dim:rgba(232,226,208,.12);
+  --white:#f0ece2;
+  --off:rgba(240,236,226,.58);
+  --fog:rgba(210,204,182,.48);
+  --graphite:#181810;
+  --chalk:#a09a78;
+}
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(180deg,#0c1209 0%,#0e1610 100%);
+  color:var(--white);
+  font-family:'Manrope',sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--steel)}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  height:92px;
+  padding:0 56px 0 40px;
+  transition:all .5s cubic-bezier(.16,1,.3,1);
+  border-bottom:1px solid transparent;
+  background:linear-gradient(to bottom,rgba(10,18,12,.88) 0%,rgba(10,18,12,.58) 56%,transparent 100%);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+.nav.on{
+  background:rgba(10,18,12,.96);
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
+  height:92px;
+  padding:0 56px 0 40px;
+  border-bottom-color:rgba(150,184,160,.1);
+  box-shadow:0 1px 40px rgba(0,0,0,.55);
+}
+.nav-logo{
+  display:flex;
+  align-items:center;
+  height:100%;
+  width:420px;
+  justify-content:flex-start;
+  flex-shrink:0;
+  cursor:pointer;
+}
+.nav-logo-img{
+  display:block;
+  max-width:100%;
+  max-height:76px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 6px 20px rgba(0,0,0,0.35)) sepia(1) saturate(0.6) hue-rotate(60deg) brightness(0.85);
+  opacity:.95;
+}
+.nav-r{display:flex;align-items:center;gap:36px}
+.nav-a{
+  font-family:'Manrope',sans-serif;
+  font-size:.65rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(200,223,200,.74);
+  background:none;border:none;cursor:pointer;padding:0;
+  transition:color .22s;
+}
+.nav-a:hover{color:var(--white)}
+.nav-cta{
+  font-family:'Manrope',sans-serif;
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  cursor:pointer;
+  padding:9px 22px;
+  background:none;
+  border:1px solid rgba(200,223,200,.34);
+  color:rgba(200,223,200,.94);
+  transition:all .3s cubic-bezier(.16,1,.3,1);
+}
+.nav-cta:hover{
+  background:var(--ice);
+  color:var(--ink);
+  border-color:var(--ice);
+}
+
+/* HERO */
+.hero{
+  width:100%;
+  height:100vh;
+  min-height:700px;
+  display:grid;
+  grid-template-columns:720px 1fr;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(circle at 74% 10%, rgba(100,130,110,.14), transparent 26%),
+    linear-gradient(180deg,#0d1a0f 0%,#0c1209 100%);
+}
+.hero-sb{
+  background:transparent;
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:162px 92px 72px 72px;
+  overflow:hidden;
+}
+.hero-sb::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(122,158,133,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(122,158,133,.035) 1px,transparent 1px);
+  background-size:42px 42px;
+  pointer-events:none;z-index:0;
+}
+.hero-sb-backing{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to right,
+      rgba(10,18,12,.98) 0%,
+      rgba(10,18,12,.97) 46%,
+      rgba(10,18,12,.88) 66%,
+      rgba(10,18,12,.58) 82%,
+      transparent 100%
+    );
+}
+.hero-sb-top{position:relative;z-index:3}
+.hero-h1{
+  font-family:'Red Hat Display',sans-serif;
+  font-weight:700;
+  font-size:clamp(5.2rem,7.25vw,8.35rem);
+  line-height:.81;
+  letter-spacing:-.085em;
+  color:var(--white);
+  margin-top:10px;
+  animation:hFadeUp .9s cubic-bezier(.16,1,.3,1) .22s both;
+  text-shadow:0 24px 48px rgba(4,9,6,.44);
+  max-width:8.4ch;
+}
+.hero-h1 .rule-line{
+  display:block;
+  font-family:'Newsreader',serif;
+  font-style:italic;
+  font-weight:400;
+  color:rgba(200,223,200,.88);
+  font-size:.38em;
+  letter-spacing:-.02em;
+  margin-top:18px;
+  line-height:1.08;
+}
+.hero-div{
+  width:36px;height:1px;
+  background:rgba(150,184,160,.3);
+  margin:32px 0;
+  position:relative;z-index:3;
+  animation:hFadeIn .7s ease .48s both;
+}
+.hero-sub{
+  font-family:'Manrope',sans-serif;
+  font-size:.85rem;
+  font-weight:300;
+  line-height:1.92;
+  color:rgba(200,223,200,.64);
+  max-width:520px;
+  margin-bottom:46px;
+  position:relative;z-index:3;
+  animation:hFadeUp .8s cubic-bezier(.16,1,.3,1) .56s both;
+}
+.hero-btns{
+  display:flex;flex-direction:row;gap:14px;flex-wrap:wrap;
+  position:relative;z-index:3;
+  animation:hFadeUp .8s cubic-bezier(.16,1,.3,1) .66s both;
+}
+.btn-ice,.btn-ghost{
+  min-width:196px;
+  text-align:center;
+}
+.btn-ice{
+  font-family:'Manrope',sans-serif;
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  cursor:pointer;
+  padding:14px 24px;
+  background:var(--ice);
+  border:1px solid var(--ice);
+  color:var(--ink);
+  transition:background .4s cubic-bezier(.16,1,.3,1),color .4s,transform .25s;
+}
+.btn-ice:hover{background:transparent;color:var(--ice);transform:translateX(4px)}
+.btn-ghost{
+  font-family:'Manrope',sans-serif;
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  cursor:pointer;
+  padding:14px 24px;
+  background:none;
+  border:1px solid rgba(150,184,160,.18);
+  color:rgba(220,235,220,.45);
+  transition:border-color .3s,color .3s,transform .25s;
+}
+.btn-ghost:hover{border-color:rgba(180,210,185,.42);color:var(--white);transform:translateX(4px)}
+.hero-stats{
+  position:relative;z-index:3;
+  border-top:1px solid rgba(150,184,160,.1);
+  animation:hFadeIn .8s ease .8s both;
+  max-width:520px;
+}
+.hero-stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.hs{padding:20px 0;border-right:1px solid rgba(150,184,160,.1)}
+.hs:last-child{border-right:none}
+.hs-n{
+  font-family:'Red Hat Display',sans-serif;
+  font-weight:700;
+  font-size:1.7rem;
+  letter-spacing:-.02em;
+  color:var(--ice);
+  line-height:1;
+  display:block;
+}
+.hs-l{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.38rem;
+  font-weight:300;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--chalk);
+  opacity:.5;
+  margin-top:5px;
+  display:block;
+}
+.hs:nth-child(2),.hs:last-child{padding-left:16px}
+
+@keyframes hFadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes hFadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.hero-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  overflow:hidden;background:var(--deep);
+  z-index:1;
+}
+.hero-img-inner{
+  position:absolute;
+  top:-3%;left:0;right:0;
+  height:106%;
+  will-change:transform;
+}
+.hero-img-inner img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:72% center;
+  display:block;
+  filter:brightness(0.9) contrast(1.05) saturate(0.75) hue-rotate(8deg);
+  animation:heroZoom 28s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{
+  from{transform:scale(1.02)}
+  to{transform:scale(1.06)}
+}
+.hero-img-veil{
+  position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(to right,
+      rgba(10,18,12,.93) 0%,
+      rgba(18,30,20,.84) 28%,
+      rgba(26,42,28,.58) 50%,
+      rgba(34,56,36,.18) 72%,
+      rgba(34,56,36,.06) 100%
+    );
+}
+.hero-img-glow{
+  position:absolute;top:-8%;right:-3%;
+  width:56%;height:56%;z-index:3;
+  background:radial-gradient(
+    ellipse 70% 60% at 75% 25%,
+    rgba(180,220,185,.18) 0%,
+    rgba(120,170,130,.09) 42%,
+    transparent 72%
+  );
+  pointer-events:none;
+}
+.hero-img-vignette{
+  position:absolute;inset:0;z-index:3;
+  background:radial-gradient(
+    ellipse 88% 80% at 60% 48%,
+    transparent 40%,
+    rgba(10,18,12,.14) 62%,
+    rgba(10,18,12,.34) 82%,
+    rgba(10,18,12,.54) 100%
+  );
+  pointer-events:none;
+}
+.hero-img-top{
+  position:absolute;top:0;left:0;right:0;height:18%;z-index:4;
+  background:linear-gradient(to bottom,rgba(10,18,12,.82) 0%,rgba(10,18,12,.28) 58%,transparent 100%);
+  pointer-events:none;
+}
+.hero-img-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:28%;z-index:4;
+  background:linear-gradient(to top,rgba(10,18,12,.64) 0%,transparent 100%);
+  pointer-events:none;
+}
+.hero-img-leftblur{
+  position:absolute;top:0;left:0;bottom:0;width:320px;z-index:3;
+  background:linear-gradient(to right,rgba(14,22,16,.18) 0%,transparent 100%);
+  filter:blur(18px);
+  pointer-events:none;
+}
+.hero-img-topline{
+  position:absolute;top:0;left:0;right:0;height:1px;z-index:5;
+  background:linear-gradient(to right,transparent 0%,rgba(200,223,200,.24) 36%,rgba(122,158,133,.12) 66%,transparent 100%);
+}
+.hero-img-ref{
+  position:absolute;bottom:24px;right:28px;z-index:5;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.42rem;
+  font-weight:300;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.18);
+  text-align:right;
+  line-height:1.85;
+}
+.hero-sb{z-index:5}
+
+/* Ticker */
+.ticker-wrap{
+  background:linear-gradient(90deg,#141f17 0%,#192b1c 100%);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:flex;overflow:hidden;
+}
+.ticker-label{
+  flex-shrink:0;
+  padding:0 32px;
+  background:linear-gradient(180deg,#1a2e1e 0%,#152618 100%);
+  border-right:1px solid var(--rule);
+  display:flex;align-items:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.48rem;
+  font-weight:300;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--steel);
+}
+.ticker-scroll{flex:1;overflow:hidden;padding:18px 0}
+.ticker-track{display:flex;white-space:nowrap;animation:tick 28s linear infinite}
+.ti{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.56rem;
+  font-weight:300;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:rgba(180,210,185,.3);
+  padding:0 40px;
+  display:flex;align-items:center;gap:40px;flex-shrink:0;
+}
+.td{width:3px;height:3px;border-radius:50%;background:var(--steel);opacity:.4;flex-shrink:0}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.sec{padding:120px 72px}
+.inner{max-width:1320px;margin:0 auto}
+.mono-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.52rem;
+  font-weight:300;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--steel);
+  display:flex;align-items:center;gap:9px;margin-bottom:14px;
+}
+.mono-label::before{content:'//';color:var(--ice);opacity:.4;font-size:.85em}
+.R{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.R.on{opacity:1;transform:none}
+
+/* ABOUT */
+.about-sec{background:linear-gradient(180deg,#111f14 0%,#0f1d12 100%);padding:0;position:relative}
+.about-grid{display:grid;grid-template-columns:1fr 1px 1fr;min-height:78vh}
+.about-img-col{position:relative;overflow:hidden;background:var(--deep)}
+.about-img-fallback,
+.about-img-col img,
+.about-img-col video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.55;
+  filter:saturate(.58) contrast(1.12) brightness(.9) hue-rotate(8deg);
+  transition:transform .95s ease;
+}
+.about-img-fallback{display:none}
+.about-img-col:hover img,
+.about-img-col:hover video,
+.about-img-col:hover .about-img-fallback{transform:scale(1.03)}
+.about-img-shade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to right,transparent 55%,var(--navy) 100%),
+    linear-gradient(to top,rgba(12,20,14,.5) 0%,transparent 40%);
+}
+.about-img-tag{
+  position:absolute;bottom:40px;left:40px;
+  background:rgba(12,20,14,.88);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  padding:13px 18px;border-left:2px solid var(--steel);
+}
+.about-img-tag .t1{font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:3px}
+.about-img-tag .t2{font-family:'Inter',sans-serif;font-style:italic;font-size:.8rem;font-weight:300;color:rgba(180,210,185,.6)}
+.about-rule-col{background:var(--rule)}
+.about-text-col{
+  padding:100px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.about-wm{
+  position:absolute;top:20px;right:-10px;
+  font-family:'Sora',sans-serif;font-weight:700;font-size:13rem;line-height:1;
+  letter-spacing:-.04em;color:rgba(255,255,255,.025);
+  pointer-events:none;user-select:none;
+}
+.about-h{
+  font-family:'Red Hat Display',sans-serif;
+  font-weight:700;
+  font-size:clamp(2.7rem,3.9vw,4.35rem);
+  line-height:.9;
+  letter-spacing:-.05em;
+  color:var(--white);
+  margin-bottom:32px;
+}
+.about-h em{
+  display:block;
+  font-family:'Newsreader',serif;
+  font-style:italic;
+  font-weight:400;
+  color:var(--ice);
+  font-size:.8em;
+  letter-spacing:-.02em;
+  margin-top:10px;
+}
+.about-bar{width:28px;height:2px;background:var(--steel);margin-bottom:26px;opacity:.7}
+.about-body{
+  font-family:'Inter',sans-serif;
+  font-size:.86rem;
+  font-weight:300;
+  line-height:2;
+  color:var(--fog);
+  max-width:420px;
+  margin-bottom:52px;
+  padding-left:18px;
+  border-left:1px solid var(--rule);
+}
+.about-figs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--rule);
+  padding-top:40px;
+}
+.af{padding-right:22px;border-right:1px solid var(--rule)}
+.af:last-child{border-right:none;padding-right:0;padding-left:22px}
+.af:nth-child(2){padding-left:22px}
+.af-n{font-family:'Red Hat Display',sans-serif;font-weight:700;font-size:2.5rem;letter-spacing:-.04em;color:var(--ice);line-height:1;margin-bottom:6px;display:block}
+.af-l{font-family:'JetBrains Mono',monospace;font-size:.42rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);display:block}
+
+/* SERVICES */
+.services-sec{background:var(--ink)}
+.svc-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:64px;gap:60px}
+.svc-h{
+  font-family:'Red Hat Display',sans-serif;
+  font-weight:700;
+  font-size:clamp(3.15rem,5.6vw,6rem);
+  line-height:.88;
+  letter-spacing:-.055em;
+  color:var(--white);
+}
+.svc-h span{display:block;-webkit-text-stroke:1.2px rgba(200,223,200,.32);color:rgba(200,223,200,.08)}
+.svc-note{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:300;line-height:1.85;color:var(--fog);max-width:300px;text-align:right}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule)}
+.svc-card{
+  background:linear-gradient(145deg,rgba(11,18,13,.98) 0%,rgba(18,28,20,.98) 100%);
+  padding:38px 42px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:background .35s,transform .35s,border-color .35s;
+  border:1px solid rgba(100,140,110,.08);
+}
+.svc-card::before{
+  content:'';
+  position:absolute;top:0;left:0;bottom:0;width:2px;
+  background:var(--ice);
+  transform:scaleY(0);
+  transform-origin:bottom;
+  transition:transform .48s cubic-bezier(.16,1,.3,1);
+}
+.svc-card::after{
+  content:'';
+  position:absolute;inset:auto -10% -35% 35%;height:180px;
+  background:radial-gradient(circle, rgba(100,140,110,.18) 0%, transparent 68%);
+  opacity:0;
+  transition:opacity .45s ease;
+}
+.svc-card:hover,.svc-card.open{
+  background:linear-gradient(145deg,rgba(22,36,24,.98) 0%,rgba(34,54,36,.98) 100%);
+  border-color:rgba(100,140,110,.18);
+  transform:translateY(-2px);
+}
+.svc-card:hover::after,.svc-card.open::after{opacity:1}
+.svc-card:hover::before,.svc-card.open::before{transform:scaleY(1)}
+.svc-top-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.svc-num{font-family:'JetBrains Mono',monospace;font-size:.48rem;font-weight:300;letter-spacing:.18em;color:var(--steel);margin-bottom:12px;display:block;transition:color .3s}
+.svc-card:hover .svc-num,.svc-card.open .svc-num{color:var(--ice)}
+.svc-name{font-family:'Red Hat Display',sans-serif;font-weight:600;font-size:clamp(1.25rem,1.9vw,1.75rem);letter-spacing:-.04em;color:var(--white);line-height:1.05;transition:color .3s}
+.svc-card:hover .svc-name,.svc-card.open .svc-name{color:var(--ice)}
+.svc-cat{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.44rem;
+  font-weight:300;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:rgba(154,184,160,.7);
+  padding:5px 10px;
+  border:1px solid rgba(100,140,110,.16);
+  white-space:nowrap;
+  flex-shrink:0;
+  background:rgba(255,255,255,.02);
+}
+.svc-tog{
+  width:26px;height:26px;border:1px solid rgba(100,140,110,.16);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;color:rgba(200,223,200,.32);
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+}
+.svc-card.open .svc-tog,.svc-card:hover .svc-tog{background:var(--ice);border-color:var(--ice);color:var(--ink);transform:rotate(45deg)}
+.svc-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .55s cubic-bezier(.16,1,.3,1),opacity .4s,margin .4s;margin-top:0}
+.svc-card.open .svc-body{max-height:260px;opacity:1;margin-top:22px}
+.svc-body p{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:300;line-height:1.9;color:rgba(200,223,200,.54);margin-bottom:18px;max-width:56ch}
+.svc-tags{display:flex;flex-wrap:wrap;gap:7px}
+.svc-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(200,223,200,.54);
+  padding:4px 10px;border:1px solid rgba(100,140,110,.15);background:rgba(255,255,255,.015);
+}
+
+/* SECTORS */
+.sectors-sec{
+  background:
+    radial-gradient(circle at 18% 18%, rgba(80,120,90,.1), transparent 34%),
+    linear-gradient(180deg,#131f16 0%,#111b14 100%);
+  padding:0;
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:60vh;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.sectors-left{
+  padding:100px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--rule);
+}
+.sectors-big{
+  font-family:'Red Hat Display',sans-serif;
+  font-weight:700;
+  font-size:clamp(3.7rem,6.1vw,7.2rem);
+  line-height:.86;
+  letter-spacing:-.06em;
+  color:var(--white);
+  margin-bottom:40px;
+}
+.sectors-big span{display:block;-webkit-text-stroke:1.2px rgba(200,223,200,.3);color:rgba(200,223,200,.08)}
+.sectors-sub{font-family:'Manrope',sans-serif;font-size:.86rem;font-weight:300;line-height:1.9;color:var(--fog);max-width:380px}
+.sectors-right{
+  padding:100px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:0;
+}
+.sector-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 0;border-bottom:1px solid var(--rule);
+  transition:background .3s,padding .3s,border-color .3s;
+}
+.sector-row:first-child{border-top:1px solid var(--rule)}
+.sector-row:hover{padding-left:14px;border-color:rgba(100,140,110,.24)}
+.sector-name{font-family:'Red Hat Display',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:-.04em;color:rgba(220,235,220,.76);transition:color .3s}
+.sector-row:hover .sector-name{color:var(--white)}
+.sector-tag{font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+
+/* PROJECTS */
+.projects-sec{background:linear-gradient(180deg,#0e1a10 0%,#0c1810 100%);padding:120px 0}
+.proj-head{padding:0 72px;margin-bottom:60px;display:flex;align-items:flex-end;justify-content:space-between}
+.proj-h{font-family:'Red Hat Display',sans-serif;font-weight:700;font-size:clamp(3rem,5.1vw,5.45rem);line-height:.9;letter-spacing:-.065em;color:var(--white)}
+.proj-note{font-family:'JetBrains Mono',monospace;font-size:.48rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);max-width:240px;line-height:1.8;text-align:right}
+.proj-feat{
+  margin:0 72px;
+  height:58vh;
+  min-height:440px;
+  max-height:640px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg,#101e14 0%,#162a1a 100%);
+  border:1px solid rgba(100,140,110,.14);
+  display:flex;align-items:flex-end;
+  box-shadow:0 34px 70px rgba(1,8,4,.34);
+}
+.proj-feat-ph{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,rgba(12,22,16,.06),rgba(12,22,16,.28)),
+    radial-gradient(circle at 72% 22%, rgba(100,140,110,.1) 0%, transparent 30%),
+    url('Wrightington_hospital.webp') center/cover no-repeat,
+    linear-gradient(135deg,#192e20 0%,#253e2c 58%,#122018 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.proj-feat-ph::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(200,223,200,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,223,200,.045) 1px, transparent 1px);
+  background-size:120px 120px,120px 120px;
+  mask-image:linear-gradient(135deg, rgba(0,0,0,.85), transparent 70%);
+  opacity:.18;
+}
+.proj-feat-ph::after{
+  content:'';
+  position:absolute;right:-8%;bottom:-14%;width:56%;height:56%;
+  background:radial-gradient(circle, rgba(200,223,200,.14) 0%, rgba(100,140,110,.06) 28%, transparent 66%);
+}
+.proj-feat-ph span{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.14)}
+.proj-feat-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,20,14,.78) 0%,rgba(12,20,14,.12) 48%,transparent 100%)}
+.proj-chip{position:absolute;top:28px;left:28px;font-family:'JetBrains Mono',monospace;font-size:.48rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;background:var(--ice);color:var(--ink);padding:5px 12px}
+.proj-feat-body{position:relative;z-index:2;width:100%;padding:44px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.proj-feat-name{font-family:'Red Hat Display',sans-serif;font-weight:700;font-size:clamp(2rem,3.5vw,3.8rem);letter-spacing:-.055em;color:var(--white);line-height:.92}
+.proj-meta{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}
+.pm{font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,223,200,.38);text-align:right}
+.pm span{display:block;color:rgba(200,223,200,.66);margin-top:2px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:4px 72px 0}
+.pgc{
+  position:relative;overflow:hidden;cursor:pointer;
+  background:linear-gradient(145deg,#101e14 0%,#162a1a 100%);
+  aspect-ratio:4/3;
+  border:1px solid rgba(100,140,110,.12);
+  display:flex;align-items:flex-end;
+}
+.pgc-ph{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(145deg,rgba(12,20,14,.1),rgba(12,20,14,.52)),
+    radial-gradient(circle at 70% 28%, rgba(100,140,110,.22) 0%, transparent 28%),
+    linear-gradient(135deg,#192e20,#253e2c);
+}
+.pgc-ph::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(200,223,200,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,223,200,.04) 1px, transparent 1px);
+  background-size:72px 72px,72px 72px;
+  opacity:.35;
+}
+.pgc-ph::after{
+  content:'';
+  position:absolute;inset:18px;
+  border:1px solid rgba(200,223,200,.06);
+}
+.pgc-ph-t{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.09)}
+.pgc-line{position:absolute;top:0;left:0;right:0;height:1px;background:var(--ice);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.pgc:hover .pgc-line{transform:scaleX(1)}
+.pgc-info{position:relative;z-index:2;width:100%;padding:20px;background:linear-gradient(to top,rgba(12,20,14,.94) 0%,transparent 100%);transform:translateY(3px);transition:transform .35s}
+.pgc:hover .pgc-info{transform:none}
+.pgc-sector{font-family:'JetBrains Mono',monospace;font-size:.44rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--ice);margin-bottom:5px;display:block;opacity:0;transform:translateY(5px);transition:all .35s}
+.pgc:hover .pgc-sector{opacity:1;transform:none}
+.pgc-name{font-family:'Red Hat Display',sans-serif;font-weight:600;font-size:1rem;color:var(--white);line-height:1.15;letter-spacing:-.04em}
+.pgc-scope{font-family:'JetBrains Mono',monospace;font-size:.42rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:3px}
+
+/* CERTIFICATIONS */
+.certs-sec{
+  background:linear-gradient(180deg,#152619 0%,#122216 100%);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.cert{
+  padding:44px 48px;
+  border-right:1px solid var(--rule);
+  display:flex;flex-direction:column;gap:6px;
+  transition:background .3s,border-color .3s;
+}
+.cert:last-child{border-right:none}
+.cert:hover{background:rgba(255,255,255,.03);border-color:rgba(100,140,110,.22)}
+.cert-name{font-family:'Red Hat Display',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:-.04em;color:var(--white)}
+.cert-sub{font-family:'JetBrains Mono',monospace;font-size:.44rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+
+/* WHY */
+.why-sec{background:linear-gradient(180deg,#111e14 0%,#0f1a10 100%);padding:120px 72px}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;max-width:1320px;margin:0 auto}
+.why-h{font-family:'Red Hat Display',sans-serif;font-weight:700;font-size:clamp(3.7rem,6.5vw,7.2rem);line-height:.88;letter-spacing:-.075em;color:var(--white);margin-bottom:40px}
+.why-h .hollow{display:block;-webkit-text-stroke:1.2px rgba(200,223,200,.32);color:rgba(200,223,200,.08)}
+.why-quote{font-family:'Manrope',sans-serif;font-style:italic;font-size:1rem;font-weight:300;line-height:1.78;color:rgba(200,223,200,.5);border-left:2px solid var(--steel);padding-left:20px;margin-bottom:28px}
+.why-attr{font-family:'JetBrains Mono',monospace;font-size:.48rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;gap:10px}
+.why-attr::before{content:'//';color:var(--ice);opacity:.4;font-family:'JetBrains Mono',monospace}
+.why-pts{}
+.why-pt{padding:26px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:18px 1fr;gap:18px;align-items:start}
+.why-pt:first-child{border-top:1px solid var(--rule)}
+.wp-n{font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;letter-spacing:.1em;color:var(--steel);padding-top:2px}
+.wp-t{font-family:'Red Hat Display',sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.04em;color:var(--white);margin-bottom:7px;transition:color .3s}
+.why-pt:hover .wp-t{color:var(--ice)}
+.wp-d{font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:300;line-height:1.88;color:rgba(200,223,200,.42)}
+
+/* CONTACT */
+.contact-sec{
+  background:
+    radial-gradient(circle at 82% 16%, rgba(80,120,90,.1), transparent 32%),
+    linear-gradient(180deg,#0e1812 0%,#0c160e 100%);
+  padding:0
+}
+.contact-top{
+  padding:80px 72px 60px;
+  border-bottom:1px solid var(--rule);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:60px;
+}
+.contact-h{font-family:'Red Hat Display',sans-serif;font-weight:700;font-size:clamp(3.35rem,6.4vw,7.1rem);line-height:.88;letter-spacing:-.075em;color:var(--white)}
+.contact-h .ice{color:var(--ice)}
+.contact-tag{font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:300;line-height:1.88;color:var(--fog);max-width:360px;text-align:right;flex-shrink:0}
+.contact-body{display:grid;grid-template-columns:360px 1fr}
+.contact-info{
+  padding:56px 60px;
+  border-right:1px solid var(--rule);
+  display:flex;flex-direction:column;gap:28px;
+  background:rgba(255,255,255,.015);
+}
+.ci-l{font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-bottom:5px}
+.ci-v{font-family:'Manrope',sans-serif;font-size:.84rem;font-weight:300;color:rgba(200,223,200,.64);line-height:1.6}
+.ci-v a{color:rgba(200,223,200,.64);text-decoration:none;transition:color .2s}
+.ci-v a:hover{color:var(--ice)}
+.trust-pills{display:flex;flex-wrap:wrap;gap:7px;padding-top:16px;border-top:1px solid var(--rule)}
+.tp{font-family:'JetBrains Mono',monospace;font-size:.44rem;font-weight:300;letter-spacing:.13em;text-transform:uppercase;color:var(--steel);padding:5px 11px;border:1px solid rgba(100,140,110,.15);background:rgba(255,255,255,.02)}
+.contact-form{padding:56px 64px;display:flex;flex-direction:column;justify-content:center}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.f-lbl{font-family:'JetBrains Mono',monospace;font-size:.46rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:8px}
+.f-inp{
+  width:100%;
+  background:none;border:none;
+  border-bottom:1px solid rgba(100,140,110,.28);
+  padding:11px 0;
+  font-family:'Manrope',sans-serif;
+  font-size:.86rem;
+  font-weight:300;
+  color:rgba(200,223,200,.82);
+  outline:none;
+  resize:none;
+  transition:border-color .3s;
+  margin-bottom:22px;
+}
+.f-inp::placeholder{color:rgba(200,223,200,.18)}
+.f-inp:focus{border-bottom-color:var(--ice)}
+.f-sub{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:'Red Hat Display',sans-serif;
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  cursor:pointer;
+  padding:15px 40px;
+  background:var(--ice);
+  border:1px solid var(--ice);
+  color:var(--ink);
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+  margin-top:10px;
+}
+.f-sub:hover{background:transparent;color:var(--ice)}
+.f-arr{transition:transform .3s}
+.f-sub:hover .f-arr{transform:translateX(5px)}
+.f-ok{display:none;background:rgba(180,210,185,.05);border:1px solid rgba(180,210,185,.12);padding:40px}
+.f-ok p{font-family:'Manrope',sans-serif;font-size:.84rem;font-weight:300;color:var(--fog);line-height:2}
+.f-ok strong{color:var(--ice);font-weight:400}
+
+/* FOOTER */
+footer{
+  background:var(--ink);
+  padding:36px 72px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:18px;
+  border-top:1px solid var(--rule);
+}
+.fl{display:flex;align-items:center;gap:14px}
+.fl-m{width:28px;height:28px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center}
+.fl-m span{font-family:'Red Hat Display',sans-serif;font-size:.85rem;font-weight:700;color:rgba(154,184,160,.36);line-height:1}
+.fl-n{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.24)}
+.fn{display:flex;gap:28px;flex-wrap:wrap}
+.fn button{font-family:'JetBrains Mono',monospace;font-size:.48rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.22);background:none;border:none;cursor:pointer;transition:color .2s;padding:0}
+.fn button:hover{color:rgba(255,255,255,.5)}
+.fb{width:100%;padding-top:18px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.fb-c,.fb-r{font-family:'JetBrains Mono',monospace;font-size:.44rem;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.16)}
+
+/* TABLET / MOBILE */
+@media(max-width:960px){
+  .nav,.nav.on{height:78px;padding:0 max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left));}
+  .nav-r{gap:14px}
+  .nav-a{display:none}
+  .nav-logo{width:210px}
+  .nav-logo-img{max-height:52px}
+  .nav-cta{padding:10px 16px;font-size:.56rem;}
+  .hero{min-height:100svh;height:auto;display:block;}
+  .hero-img{display:block;inset:0;}
+  .hero-img-inner{top:0;height:100%}
+  .hero-img-inner img{object-position:64% center}
+  .hero-img-ref{display:none}
+  .hero-sb{min-height:100svh;padding:112px 22px 28px;justify-content:flex-end;}
+  .hero-sb::before{display:none}
+  .hero-sb-backing{background:linear-gradient(to top,rgba(10,18,12,.96) 12%,rgba(10,18,12,.84) 42%,rgba(10,18,12,.38) 72%,rgba(10,18,12,.12) 100%);}
+  .hero-h1{font-size:clamp(3.2rem,12vw,4.7rem);line-height:.88;max-width:7.4ch;margin-top:0;}
+  .hero-h1 .rule-line{font-size:.42em;margin-top:12px;}
+  .hero-div{margin:22px 0}
+  .hero-sub{max-width:30ch;font-size:.92rem;line-height:1.75;margin-bottom:26px;}
+  .hero-btns{flex-direction:column;gap:10px;}
+  .btn-ice,.btn-ghost{width:100%;min-width:0;}
+  .hero-stats{max-width:none;margin-top:26px;}
+  .hero-stats-grid{grid-template-columns:repeat(3,1fr);}
+  .hs,.hs:nth-child(2),.hs:last-child{padding:14px 8px 0 0;}
+  .hs-n{font-size:1.35rem}
+  .hs-l{font-size:.34rem}
+  .ticker-wrap{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-img-col{height:34svh;min-height:260px;position:relative;}
+  .about-img-col video{display:none}
+  .about-img-fallback{display:block}
+  .about-img-tag{left:18px;right:18px;bottom:18px;padding:12px 14px;}
+  .about-rule-col{display:none}
+  .about-text-col{padding:38px 22px 42px}
+  .about-wm{font-size:5.8rem;top:12px;right:8px;}
+  .about-h{font-size:clamp(2.2rem,10vw,3.4rem);margin-bottom:20px;}
+  .about-body{max-width:none;font-size:.92rem;line-height:1.8;margin-bottom:32px;padding-left:14px;}
+  .about-figs{grid-template-columns:1fr;gap:18px;padding-top:24px;}
+  .af,.af:nth-child(2),.af:last-child{border-right:none;padding:0;border-bottom:1px solid var(--rule);padding-bottom:14px;}
+  .af:last-child{border-bottom:none;padding-bottom:0}
+  .sec{padding:64px 20px}
+  .svc-top{flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:28px;}
+  .svc-h{font-size:clamp(2.25rem,10vw,3.7rem)}
+  .svc-note{text-align:left;max-width:none}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-card{padding:28px 20px}
+  .svc-top-row{gap:12px}
+  .svc-name{font-size:1.35rem}
+  .sectors-sec{grid-template-columns:1fr;min-height:auto;}
+  .sectors-left{padding:58px 20px 42px;border-right:none;border-bottom:1px solid var(--rule);}
+  .sectors-right{padding:24px 20px 40px}
+  .sectors-big{font-size:clamp(2.6rem,12vw,4.2rem);margin-bottom:22px;}
+  .sector-row{align-items:flex-start;flex-direction:column;gap:6px;padding:18px 0;}
+  .projects-sec{padding:64px 0}
+  .proj-head{padding:0 20px;flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:28px;}
+  .proj-note{text-align:left}
+  .proj-feat{margin:0 20px;min-height:0;height:auto;aspect-ratio:4/5;}
+  .proj-chip{top:18px;left:18px;}
+  .proj-feat-body{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:18px;padding:22px 18px;}
+  .proj-feat-name{font-size:clamp(1.8rem,9vw,3rem)}
+  .proj-meta{align-items:flex-start;gap:8px}
+  .pm{text-align:left}
+  .proj-grid{grid-template-columns:1fr;margin:4px 20px 0;}
+  .certs-sec{grid-template-columns:1fr}
+  .cert{padding:26px 20px;border-right:none;border-bottom:1px solid var(--rule);}
+  .cert:last-child{border-bottom:none}
+  .why-sec{padding:64px 20px}
+  .why-layout{grid-template-columns:1fr;gap:34px;}
+  .why-h{font-size:clamp(2.5rem,12vw,4.2rem);margin-bottom:26px;}
+  .why-quote{font-size:.95rem;line-height:1.7;}
+  .why-pt{grid-template-columns:1fr;gap:8px;padding:20px 0;}
+  .contact-top{flex-direction:column;align-items:flex-start;padding:46px 20px 30px;gap:14px;}
+  .contact-h{font-size:clamp(2.5rem,12vw,4.2rem)}
+  .contact-tag{text-align:left;max-width:none}
+  .contact-body{grid-template-columns:1fr}
+  .contact-info{padding:28px 20px;border-right:none;border-bottom:1px solid var(--rule);}
+  .contact-form{padding:30px 20px 36px}
+  .f-grid{grid-template-columns:1fr}
+  .f-sub{width:100%;justify-content:center}
+  footer{padding:24px 20px}
+  .fl,.fn,.fb{width:100%}
+  .fn{gap:18px;justify-content:flex-start;}
+  .fb{flex-direction:column}
+}
+
+@media(max-width:520px){
+  .nav,.nav.on{height:72px;padding:0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));}
+  .nav-logo{width:170px}
+  .nav-logo-img{max-height:44px}
+  .nav-cta{padding:9px 12px;font-size:.52rem;}
+  .hero-sb{padding:96px 16px 22px}
+  .hero-h1{font-size:2.85rem}
+  .hero-sub{font-size:.88rem}
+  .hero-stats-grid{grid-template-columns:1fr}
+  .hs,.hs:nth-child(2),.hs:last-child{border-right:none;border-bottom:1px solid rgba(150,184,160,.1);padding:12px 0;}
+  .hs:last-child{border-bottom:none}
+  .about-text-col,.sectors-left,.sectors-right,.contact-top,.contact-info,.contact-form,.sec,.why-sec{padding-left:16px;padding-right:16px;}
+  .proj-head,.proj-feat,.proj-grid{margin-left:16px;margin-right:16px;}
+  .proj-head{padding-left:0;padding-right:0}
+  .proj-feat{aspect-ratio:10/13}
+  .svc-card{padding:24px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-logo" onclick="g('hero')">
+    <img src="newlogo.png" alt="McDonald Insulation Services logo" class="nav-logo-img">
+  </div>
+  <div class="nav-r">
+    <button class="nav-a" onclick="g('about')">About</button>
+    <button class="nav-a" onclick="g('services')">Services</button>
+    <button class="nav-a" onclick="g('projects')">Projects</button>
+    <button class="nav-a" onclick="g('contact')">Contact</button>
+    <button class="nav-cta" onclick="g('contact')">Get a Quote</button>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-img">
+    <div class="hero-img-inner">
+      <img src="hero-architecture.jpg" alt="Modern architectural steel and glass commercial interior">
+    </div>
+    <div class="hero-img-glow"></div>
+    <div class="hero-img-veil"></div>
+    <div class="hero-img-leftblur"></div>
+    <div class="hero-img-vignette"></div>
+    <div class="hero-img-top"></div>
+    <div class="hero-img-bottom"></div>
+    <div class="hero-img-topline"></div>
+    <div class="hero-img-ref">// Commercial Building Interior<br>// Glass, Steel &amp; Structural Systems</div>
+  </div>
+  <div class="hero-sb">
+    <div class="hero-sb-backing"></div>
+    <div class="hero-sb-top">
+      <h1 class="hero-h1">
+        Precision Insulation
+        <span class="rule-line">for Commercial<br>Environments.</span>
+      </h1>
+      <div class="hero-div"></div>
+      <p class="hero-sub">Thermal, acoustic and fire protection systems for technically demanding healthcare, infrastructure and commercial projects.</p>
+      <div class="hero-btns">
+        <button class="btn-ice" onclick="g('contact')">Request a Quote</button>
+        <button class="btn-ghost" onclick="g('services')">View Services</button>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stats-grid">
+        <div class="hs"><span class="hs-n">15+</span><span class="hs-l">// Years</span></div>
+        <div class="hs"><span class="hs-n">250+</span><span class="hs-l">// Projects</span></div>
+        <div class="hs"><span class="hs-n">UK</span><span class="hs-l">// Nationwide</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">Capabilities</div>
+  <div class="ticker-scroll">
+    <div class="ticker-track">
+      <span class="ti">Thermal Insulation<span class="td"></span>Acoustic Insulation<span class="td"></span>Cladding<span class="td"></span>Trace Heating<span class="td"></span>Fire Rated<span class="td"></span>Sheet Metal Fabrication<span class="td"></span>Insulation Jackets</span>
+      <span class="ti">Thermal Insulation<span class="td"></span>Acoustic Insulation<span class="td"></span>Cladding<span class="td"></span>Trace Heating<span class="td"></span>Fire Rated<span class="td"></span>Sheet Metal Fabrication<span class="td"></span>Insulation Jackets</span>
+    </div>
+  </div>
+</div>
+
+<section class="about-sec" id="about">
+  <div class="about-grid">
+    <div class="about-img-col">
+      <img class="about-img-fallback" src="hero-architecture.jpg" alt="Commercial building environment">
+      <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hero-architecture.jpg" id="aboutVideo">
+        <source src="potential-mi-video.mp4" type="video/mp4">
+      </video>
+      <div class="about-img-shade"></div>
+      <div class="about-img-tag">
+        <span class="t1">// Commercial Environment</span>
+        <p class="t2">Coordinated finishes for high-value buildings</p>
+      </div>
+    </div>
+    <div class="about-rule-col"></div>
+    <div class="about-text-col">
+      <div class="about-wm">15</div>
+      <div class="mono-label R">Who We Are</div>
+      <h2 class="about-h R" style="transition-delay:.08s">Technical<br>Excellence.<em>Built on Experience.</em></h2>
+      <div class="about-bar R" style="transition-delay:.16s"></div>
+      <p class="about-body R" style="transition-delay:.22s">McDonald Insulation Services delivers specialist insulation, cladding and fire protection packages across hospitals, airports, schools, stadiums and large commercial developments.</p>
+      <div class="about-figs R" style="transition-delay:.3s">
+        <div class="af"><span class="af-n">15+</span><span class="af-l">// Years</span></div>
+        <div class="af"><span class="af-n">7</span><span class="af-l">// Trades</span></div>
+        <div class="af"><span class="af-n">250+</span><span class="af-l">// Projects</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec services-sec" id="services">
+  <div class="inner">
+    <div class="svc-top">
+      <div class="R">
+        <div class="mono-label">What We Do</div>
+        <h2 class="svc-h">Specialist<br><span>Services</span></h2>
+      </div>
+      <p class="svc-note R" style="transition-delay:.1s">Click any service to view full scope and application detail.</p>
+    </div>
+    <div class="svc-grid R" style="transition-delay:.08s">
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 01</span><div class="svc-name">Thermal Insulation</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Energy</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>Precision thermal insulation for pipework, vessels, ductwork and mechanical equipment. We design and install solutions that maximise energy efficiency and meet the highest compliance standards across healthcare, industrial and commercial environments.</p><div class="svc-tags"><span class="svc-tag">Pipework</span><span class="svc-tag">Vessels</span><span class="svc-tag">Ductwork</span><span class="svc-tag">HVAC</span><span class="svc-tag">Cold &amp; Hot</span></div></div>
+      </div>
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 02</span><div class="svc-name">Acoustic Insulation</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Sound</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>Specialist acoustic insulation for environments where sound control is critical. From hospital quiet zones and university lecture rooms to stadium plant rooms, our solutions meet exacting acoustic performance requirements.</p><div class="svc-tags"><span class="svc-tag">Hospitals</span><span class="svc-tag">Stadiums</span><span class="svc-tag">Education</span><span class="svc-tag">Commercial</span></div></div>
+      </div>
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 03</span><div class="svc-name">Cladding Systems</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Weather</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>External and internal cladding systems designed for durability, weather resistance and aesthetic performance. Full supply and installation across commercial, healthcare and infrastructure projects of any scale.</p><div class="svc-tags"><span class="svc-tag">External</span><span class="svc-tag">Metal Sheeting</span><span class="svc-tag">Composite</span><span class="svc-tag">Fire-Rated</span></div></div>
+      </div>
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 04</span><div class="svc-name">Trace Heating</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Freeze</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>Self-regulating and constant wattage trace heating systems designed, installed and commissioned for freeze protection and process temperature maintenance in critical infrastructure environments.</p><div class="svc-tags"><span class="svc-tag">Self-Regulating</span><span class="svc-tag">Constant Wattage</span><span class="svc-tag">Frost Protection</span><span class="svc-tag">Process Heating</span></div></div>
+      </div>
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 05</span><div class="svc-name">Fire Rated</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Safety</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>Passive fire protection for building services — intumescent coatings, fire wraps, specialist insulation solutions and compartmentation systems. Fully compliant with UK building regulations, installed by trained operatives.</p><div class="svc-tags"><span class="svc-tag">Intumescent</span><span class="svc-tag">Fire Wraps</span><span class="svc-tag">Compartmentation</span><span class="svc-tag">Building Services</span></div></div>
+      </div>
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 06</span><div class="svc-name">Sheet Metal Fabrication</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Bespoke</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>In-house sheet metal fabrication for custom cladding profiles, ductwork casings and insulation covers. Faster lead times, tighter tolerances, and complete quality control from design through to on-site installation.</p><div class="svc-tags"><span class="svc-tag">Custom Profiles</span><span class="svc-tag">Ductwork</span><span class="svc-tag">Stainless</span><span class="svc-tag">Aluminium</span></div></div>
+      </div>
+      <div class="svc-card" onclick="tc(this)">
+        <div class="svc-top-row"><div><span class="svc-num">// 07</span><div class="svc-name">Insulation Jackets</div></div><div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0"><span class="svc-cat">Removable</span><div class="svc-tog">+</div></div></div>
+        <div class="svc-body"><p>Bespoke removable and reusable thermal insulation jackets for valves, flanges, pumps and equipment requiring regular maintenance access. Custom-manufactured to fit any component precisely.</p><div class="svc-tags"><span class="svc-tag">Valve Jackets</span><span class="svc-tag">Flanges</span><span class="svc-tag">Pumps</span><span class="svc-tag">Reusable</span></div></div>
+      </div>
+      <div class="svc-card" style="background:linear-gradient(145deg,rgba(11,18,13,.96) 0%,rgba(22,36,24,.94) 100%);cursor:default;display:flex;align-items:center;justify-content:center">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(154,184,160,.34)">// All environments covered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors-sec">
+  <div class="sectors-left R">
+    <div class="mono-label" style="margin-bottom:28px">Where We Work</div>
+    <h2 class="sectors-big">BUILT<br>FOR<br><span>SCALE</span></h2>
+    <p class="sectors-sub">From NHS hospitals to international airports — McDonald Insulation operates at the highest level of commercial construction.</p>
+  </div>
+  <div class="sectors-right R" style="transition-delay:.12s">
+    <div class="sector-row"><span class="sector-name">NHS Hospitals &amp; Healthcare</span><span class="sector-tag">// Healthcare</span></div>
+    <div class="sector-row"><span class="sector-name">Airports &amp; Transport Hubs</span><span class="sector-tag">// Infrastructure</span></div>
+    <div class="sector-row"><span class="sector-name">Stadiums &amp; Arenas</span><span class="sector-tag">// Sport &amp; Leisure</span></div>
+    <div class="sector-row"><span class="sector-name">Universities &amp; Schools</span><span class="sector-tag">// Education</span></div>
+    <div class="sector-row"><span class="sector-name">High-Rise Residential</span><span class="sector-tag">// Residential</span></div>
+    <div class="sector-row"><span class="sector-name">Commercial &amp; Retail</span><span class="sector-tag">// Commercial</span></div>
+    <div class="sector-row"><span class="sector-name">Industrial &amp; Manufacturing</span><span class="sector-tag">// Industrial</span></div>
+  </div>
+</section>
+
+<section class="projects-sec" id="projects">
+  <div class="proj-head R">
+    <div>
+      <div class="mono-label" style="margin-bottom:14px">Selected Work</div>
+      <h2 class="proj-h">Recent<br>Projects</h2>
+    </div>
+    <p class="proj-note">Real photography added on client approval.</p>
+  </div>
+  <div class="proj-feat R" style="transition-delay:.1s">
+    <div class="proj-feat-ph"><span>// Wrightington Hospital</span></div>
+    <div class="proj-feat-grad"></div>
+    <div class="proj-chip">Featured Project</div>
+    <div class="proj-feat-body">
+      <div class="proj-feat-name">Wrightington<br>Hospital</div>
+      <div class="proj-meta">
+        <div class="pm">Sector <span>NHS Healthcare</span></div>
+        <div class="pm">Scope <span>Thermal · Acoustic · Cladding</span></div>
+        <div class="pm">Scale <span>Full Building Package</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="proj-grid R" style="transition-delay:.2s">
+    <div class="pgc"><div class="pgc-ph"><span class="pgc-ph-t">// Photography</span></div><div class="pgc-line"></div><div class="pgc-info"><span class="pgc-sector">Airport · Infrastructure</span><div class="pgc-name">International Terminal</div><div class="pgc-scope">// Thermal &amp; Acoustic</div></div></div>
+    <div class="pgc"><div class="pgc-ph"><span class="pgc-ph-t">// Photography</span></div><div class="pgc-line"></div><div class="pgc-info"><span class="pgc-sector">Education · University</span><div class="pgc-name">Campus Development</div><div class="pgc-scope">// Cladding &amp; Fire Rated</div></div></div>
+    <div class="pgc"><div class="pgc-ph"><span class="pgc-ph-t">// Photography</span></div><div class="pgc-line"></div><div class="pgc-info"><span class="pgc-sector">Commercial · High Rise</span><div class="pgc-name">City Tower Development</div><div class="pgc-scope">// Jackets &amp; Trace Heating</div></div></div>
+  </div>
+</section>
+
+<div class="certs-sec R">
+  <div class="cert"><div class="cert-name">Safe Contractor</div><div class="cert-sub">// Health &amp; Safety Accreditation</div></div>
+  <div class="cert"><div class="cert-name">IPAF Certified</div><div class="cert-sub">// Powered Access Licence</div></div>
+  <div class="cert"><div class="cert-name">CSCS Registered</div><div class="cert-sub">// Construction Skills</div></div>
+  <div class="cert"><div class="cert-name">UK Nationwide</div><div class="cert-sub">// Full Coverage · Est. 2018</div></div>
+</div>
+
+<section class="why-sec">
+  <div class="why-layout">
+    <div class="R">
+      <div class="mono-label" style="margin-bottom:22px">Why McDonald</div>
+      <h2 class="why-h">OUR<br><span class="hollow">STANDARD</span></h2>
+      <p class="why-quote">"We don't compete on price. We compete on quality, reliability, and the technical depth that demanding projects require."</p>
+      <span class="why-attr">McDonald Insulation Services &nbsp;·&nbsp; Est. 2018</span>
+    </div>
+    <div class="why-pts R" style="transition-delay:.15s">
+      <div class="why-pt"><span class="wp-n">01</span><div><div class="wp-t">Technical Depth</div><p class="wp-d">Seven specialist trades under one accountable team. Genuine technical expertise from thermal and acoustic insulation through to bespoke sheet metal fabrication and removable insulation jackets.</p></div></div>
+      <div class="why-pt"><span class="wp-n">02</span><div><div class="wp-t">Major Project Experience</div><p class="wp-d">Hospitals, airports, stadiums, universities, high-rise residential. We operate comfortably in complex, high-value, live environments — including Manchester Airport and major NHS trusts.</p></div></div>
+      <div class="why-pt"><span class="wp-n">03</span><div><div class="wp-t">Fully Accredited</div><p class="wp-d">Safe Contractor, IPAF and CSCS registered. Every installation is documented, compliant and delivered with complete traceability from start to handover.</p></div></div>
+      <div class="why-pt"><span class="wp-n">04</span><div><div class="wp-t">In-House Fabrication</div><p class="wp-d">Our own sheet metal workshop delivers faster lead times, tighter tolerances and complete quality control — from design drawings through to finished installation.</p></div></div>
+      <div class="why-pt"><span class="wp-n">05</span><div><div class="wp-t">15+ Years Delivering</div><p class="wp-d">Fifteen years of completing projects on programme, on specification, without compromise. Our reputation is the only measure that matters.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <div class="contact-top R">
+    <h2 class="contact-h">START A<br><span class="ice">CONVERSATION</span></h2>
+    <p class="contact-tag">Tell us about your project. We respond promptly to all enquiries, without obligation.</p>
+  </div>
+  <div class="contact-body">
+    <div class="contact-info R">
+      <div><div class="ci-l">// Email</div><div class="ci-v"><a href="mailto:office@mcdonaldinsulation.com">office@mcdonaldinsulation.com</a></div></div>
+      <div><div class="ci-l">// Coverage</div><div class="ci-v">United Kingdom — Nationwide</div></div>
+      <div><div class="ci-l">// Established</div><div class="ci-v">2018 — 15+ Years Experience</div></div>
+      <div class="trust-pills">
+        <span class="tp">Safe Contractor</span><span class="tp">IPAF</span><span class="tp">CSCS</span><span class="tp">Est. 2018</span>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div id="fa">
+        <div class="mono-label R" style="margin-bottom:36px">// Send an Enquiry</div>
+        <div class="f-grid">
+          <div><label class="f-lbl">Name *</label><input class="f-inp" type="text" id="fn" placeholder="Your name"></div>
+          <div><label class="f-lbl">Company</label><input class="f-inp" type="text" placeholder="Company name"></div>
+          <div><label class="f-lbl">Phone</label><input class="f-inp" type="tel" placeholder="Your number"></div>
+          <div><label class="f-lbl">Email *</label><input class="f-inp" type="email" id="fe" placeholder="your@email.com"></div>
+        </div>
+        <label class="f-lbl">Project Details</label>
+        <textarea class="f-inp" rows="5" placeholder="Location, scope, sector, programme — any relevant detail..."></textarea>
+        <button class="f-sub" onclick="sub()">Send Enquiry <span class="f-arr">→</span></button>
+      </div>
+      <div class="f-ok" id="fok"><p><strong>Thank you for your enquiry.</strong><br><br>We will be in touch shortly to discuss your project requirements.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl"><div class="fl-m"><span>M</span></div><span class="fl-n">McDonald Insulation Services Ltd</span></div>
+  <nav class="fn">
+    <button onclick="g('about')">About</button>
+    <button onclick="g('services')">Services</button>
+    <button onclick="g('projects')">Projects</button>
+    <button onclick="g('contact')">Contact</button>
+  </nav>
+  <div class="fb">
+    <p class="fb-c">© 2025 McDonald Insulation Services Ltd. All rights reserved.</p>
+    <p class="fb-r">office@mcdonaldinsulation.com</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  document.getElementById('nav').classList.toggle('on',sy>70);
+},{passive:true});
+
+function g(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+const obs=new IntersectionObserver(
+  es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}}),
+  {threshold:0.06}
+);
+document.querySelectorAll('.R').forEach(el=>obs.observe(el));
+
+const aboutVideo=document.getElementById('aboutVideo');
+if(aboutVideo){
+  const tryPlay=()=>aboutVideo.play().catch(()=>{});
+  aboutVideo.muted=true;tryPlay();
+  ['touchstart','click'].forEach(evt=>{window.addEventListener(evt,tryPlay,{once:true,passive:true});});
+}
+
+function tc(card){
+  const open=card.classList.contains('open');
+  document.querySelectorAll('.svc-card.open').forEach(c=>c.classList.remove('open'));
+  if(!open)card.classList.add('open');
+}
+
+function sub(){
+  if(document.getElementById('fn').value.trim()&&document.getElementById('fe').value.trim()){
+    document.getElementById('fa').style.display='none';
+    document.getElementById('fok').style.display='block';
+  }
+}
+</script>
+</body>
+</html>
